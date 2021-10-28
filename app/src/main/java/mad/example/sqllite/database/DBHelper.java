@@ -1,5 +1,6 @@
 package mad.example.sqllite.database;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -23,6 +24,16 @@ public class DBHelper extends SQLiteOpenHelper {
                         UseerMaster.Users.COLUMN_NAME_PASSWORD+ "TEXT)";
 
     db.execSQL(SQL_CREATE_ENTRIES);
+    }
+    public long addInfo(String username,String password){
+        SQLiteDatabase db = getWritableDatabase();
+
+        ContentValues values = new ContentValues();
+
+        values.put(UseerMaster.Users.COLUMN_NAME_USERNAME,username);
+        values.put(UseerMaster.Users.COLUMN_NAME_PASSWORD,password);
+
+    return db.insert(UseerMaster.Users.TABLE_NAME,null ,values);
     }
 
     @Override
