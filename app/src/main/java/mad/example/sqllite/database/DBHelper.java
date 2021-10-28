@@ -15,8 +15,14 @@ public class DBHelper extends SQLiteOpenHelper {
     }
 
     @Override
-    public void onCreate(SQLiteDatabase sqLiteDatabase) {
+    public void onCreate(SQLiteDatabase db) {
+        String SQL_CREATE_ENTRIES=
+                "CREATE TABLE " + UseerMaster.Users.TABLE_NAME + "(" +
+                        UseerMaster.Users._ID +"INTEGER PRIMARY KEY," +
+                        UseerMaster.Users.COLUMN_NAME_USERNAME+ "TEXT,"+
+                        UseerMaster.Users.COLUMN_NAME_PASSWORD+ "TEXT)";
 
+    db.execSQL(SQL_CREATE_ENTRIES);
     }
 
     @Override
