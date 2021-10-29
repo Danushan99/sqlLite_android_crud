@@ -27,13 +27,11 @@ public class MainActivity extends AppCompatActivity {
 
         if (name.isEmpty()||password.isEmpty()){
             Toast.makeText(this,"enter the values",Toast.LENGTH_LONG).show();
-
         }
         else {
             long inserted = dbHelper.addInfo(name,password);
         if (inserted >0){
-            Toast.makeText(this," data insert sucessful",Toast.LENGTH_LONG).show();
-
+            Toast.makeText(this," data inserted sucessful",Toast.LENGTH_LONG).show();
         }
         else {
             Toast.makeText(this,"somthig went wrong",Toast.LENGTH_LONG).show();
