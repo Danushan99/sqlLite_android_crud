@@ -24,10 +24,11 @@ public class DBHelper extends SQLiteOpenHelper {
                         UseerMaster.Users.COLUMN_NAME_PASSWORD+ "TEXT)";
 
     db.execSQL(SQL_CREATE_ENTRIES);
+
     }
+
     public long addInfo(String username,String password){
         SQLiteDatabase db = getWritableDatabase();
-
         ContentValues values = new ContentValues();
 
         values.put(UseerMaster.Users.COLUMN_NAME_USERNAME,username);
